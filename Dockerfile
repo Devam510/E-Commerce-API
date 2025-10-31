@@ -1,7 +1,7 @@
 FROM python:3.11-slim
 
 # Set working directory inside container
-WORKDIR /ECOM
+WORKDIR /app
 
 # Copy dependencies
 COPY requirements.txt .
@@ -16,4 +16,5 @@ COPY . .
 EXPOSE 8000
 
 # Run the FastAPI app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "ECOM.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
