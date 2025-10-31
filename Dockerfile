@@ -1,7 +1,7 @@
 FROM python:3.11-slim
 
 # Set the working directory to /ecom
-WORKDIR /ECOM
+WORKDIR /app
 
 # Copy and install dependencies
 COPY requirements.txt .
@@ -18,4 +18,5 @@ EXPOSE 8000
 
 # Run the app
 CMD ["uvicorn", "ECOM.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
 
