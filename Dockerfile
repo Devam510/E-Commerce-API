@@ -11,13 +11,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Go into the app folder inside ecom
-WORKDIR /ECOM/app
-
+WORKDIR /app/ECOM/app
 # Expose FastAPI port
 EXPOSE 8000
 
 # Run the app
 CMD ["uvicorn", "ECOM.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
 
 
 
