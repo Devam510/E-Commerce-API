@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   web:
     build: .
@@ -5,13 +7,13 @@ services:
       - "8000:8000"
     environment:
       - DATABASE_URL=postgresql://user:password@db:5432/ecommerce
-      - SECRET_KEY=5d0254f31c923e14d56914bd09441ae31fad7892fbc562d53497773eb24b698f
+      - SECRET_KEY=your-secret-key-here
     depends_on:
       - db
     volumes:
       - .:/app
     command: >
-      sh -c "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+      sh -c "uvicorn ECOM.app.main:app --host 0.0.0.0 --port 8000 --reload"
 
   db:
     image: postgres:13
@@ -26,4 +28,3 @@ services:
 
 volumes:
   postgres_data:
-
